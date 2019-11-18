@@ -9,6 +9,15 @@ namespace EjemploPlantillaWPF
 {
     public class MainViewModel : System.ComponentModel.INotifyPropertyChanged
     {
+
+        public MainViewModel()
+        {
+            estaSeleccionadaLaOpcion1 = true;
+            estaSeleccionadaLaOpcion2 = false;
+            estaSeleccionadaLaOpcion3 = false;
+        }
+
+
         private string _mensajeEnLaBarraDeEstado;
         public string mensajeEnLaBarraDeEstado
         {
@@ -19,6 +28,7 @@ namespace EjemploPlantillaWPF
                 NotificarQueAlgoHaCambiadoEn("mensajeEnLaBarraDeEstado");
             }
         }
+
 
         private string _textoDePrueba1;
         public string textoDePrueba1
@@ -42,7 +52,6 @@ namespace EjemploPlantillaWPF
             }
         }
 
-
         private System.Windows.Input.ICommand _ProcesarLosTextosTecleados;
         public System.Windows.Input.ICommand ProcesarLosTextosTecleados
         {
@@ -51,6 +60,38 @@ namespace EjemploPlantillaWPF
         private void Accion_ProcesarLosTextosTecleados()
         {
                 mensajeEnLaBarraDeEstado = "Has tecleado '" + textoDePrueba1 + "' en la prueba 1 y '" + textoDePrueba2 + "' en la prueba 2.";
+        }
+
+
+        private bool? _estaSeleccionadaLaOpcion1;
+        public bool? estaSeleccionadaLaOpcion1
+        {
+            get { return _estaSeleccionadaLaOpcion1; }
+            set
+            {
+                _estaSeleccionadaLaOpcion1 = value;
+                NotificarQueAlgoHaCambiadoEn("estaSeleccionadaLaOpcion1");
+            }
+        }
+        private bool? _estaSeleccionadaLaOpcion2;
+        public bool? estaSeleccionadaLaOpcion2
+        {
+            get { return _estaSeleccionadaLaOpcion2; }
+            set
+            {
+                _estaSeleccionadaLaOpcion2 = value;
+                NotificarQueAlgoHaCambiadoEn("estaSeleccionadaLaOpcion2");
+            }
+        }
+        private bool? _estaSeleccionadaLaOpcion3;
+        public bool? estaSeleccionadaLaOpcion3
+        {
+            get { return _estaSeleccionadaLaOpcion3; }
+            set
+            {
+                _estaSeleccionadaLaOpcion3 = value;
+                NotificarQueAlgoHaCambiadoEn("estaSeleccionadaLaOpcion3");
+            }
         }
 
 
