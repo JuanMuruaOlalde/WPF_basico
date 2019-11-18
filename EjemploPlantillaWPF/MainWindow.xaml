@@ -24,6 +24,10 @@
             </StackPanel>
         </StackPanel>
 
+        <Button Content="Clic aqui para procesar los textos tecleados" 
+                Command="{Binding ProcesarLosTextosTecleados}" 
+                HorizontalAlignment="Left" Margin="0,10,0,10" MinHeight="40" Padding="5" />
+
         <StatusBar Background="LightYellow" Margin="0,30,0,0" Height="20">
             <TextBlock Text="{Binding mensajeEnLaBarraDeEstado}" />
         </StatusBar>

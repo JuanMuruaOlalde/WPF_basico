@@ -8,6 +8,18 @@ namespace EjemploPlantillaWPF_TESTs
     [TestClass]
     public class PruebasDelInterfaceDeUsuario
     {
+
+        [TestMethod]
+        public void ElBotonDeProcesarTextosEscribeLoQueDebeEscribirEnLaBarraDeEstado()
+        {
+            EjemploPlantillaWPF.MainViewModel modelo = new EjemploPlantillaWPF.MainViewModel();
+
+            modelo.textoDePrueba1 = "hola";
+            modelo.textoDePrueba2 = "adios";
+            modelo.ProcesarLosTextosTecleados.Execute(null);
+            Assert.AreEqual("Has tecleado 'hola' en la prueba 1 y 'adios' en la prueba 2.", modelo.mensajeEnLaBarraDeEstado);
+        }
+
         [TestMethod]
         public void SeNotificanLosCambiosEnLaPropiedad_mensajeEnLaBarraDeEstado()
         {
@@ -36,9 +48,8 @@ namespace EjemploPlantillaWPF_TESTs
             };
 
             modelo.textoDePrueba1 = "Hola, mundo.";
-            Assert.AreEqual(2, eventos.Count);
+            Assert.AreEqual(1, eventos.Count);
             Assert.AreEqual("textoDePrueba1", eventos[0]);
-            Assert.AreEqual("mensajeEnLaBarraDeEstado", eventos[1]);
         }
 
         [TestMethod]

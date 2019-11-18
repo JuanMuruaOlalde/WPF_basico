@@ -28,8 +28,6 @@ namespace EjemploPlantillaWPF
             {
                 _textoDePrueba1 = value;
                 NotificarQueAlgoHaCambiadoEn("textoDePrueba1");
-
-                mensajeEnLaBarraDeEstado = "Has tecleado '" + textoDePrueba1 + "' en la prueba 1.";
             }
         }
 
@@ -42,6 +40,17 @@ namespace EjemploPlantillaWPF
                 _textoDePrueba2 = value;
                 NotificarQueAlgoHaCambiadoEn("textoDePrueba2");
             }
+        }
+
+
+        private System.Windows.Input.ICommand _ProcesarLosTextosTecleados;
+        public System.Windows.Input.ICommand ProcesarLosTextosTecleados
+        {
+            get { return _ProcesarLosTextosTecleados ?? (_ProcesarLosTextosTecleados = new comandoWPF(() => Accion_ProcesarLosTextosTecleados())); }
+        }
+        private void Accion_ProcesarLosTextosTecleados()
+        {
+                mensajeEnLaBarraDeEstado = "Has tecleado '" + textoDePrueba1 + "' en la prueba 1 y '" + textoDePrueba2 + "' en la prueba 2.";
         }
 
 
