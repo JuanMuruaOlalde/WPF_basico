@@ -13,3 +13,5 @@
 *.vsp*
 #Excluir las copias de seguridad de KDiff3
 *.orig
+# Excluir Visual Studio cache/options directory
+.vs/
