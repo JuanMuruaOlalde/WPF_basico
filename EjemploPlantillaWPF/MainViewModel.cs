@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace EjemploPlantillaWPF
 {
@@ -96,6 +91,23 @@ namespace EjemploPlantillaWPF
                 NotificarQueAlgoHaCambiadoEn("estaSeleccionadaLaOpcion3");
             }
         }
+
+
+        private System.Windows.Input.ICommand _MostrarVentanaDeAyuda;
+        public System.Windows.Input.ICommand MostrarVentanaDeAyuda
+        {
+            get { return _MostrarVentanaDeAyuda ?? (_MostrarVentanaDeAyuda = new comandoWPF(() => Accion_MostrarVentanaDeAyuda())); }
+        }
+        private void Accion_MostrarVentanaDeAyuda()
+        {
+            AyudaWindow ventana = new AyudaWindow();
+            ventana.DataContext = new AyudaViewModel(uriInicial: AyudaViewModel.URI_INICIAL_DE_LA_AYUDA);
+            ventana.Show();
+        }
+
+
+
+
 
 
 

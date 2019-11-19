@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using System;
 using System.Collections.Generic;
 
 
@@ -68,7 +69,6 @@ namespace EjemploPlantillaWPF_TESTs
             Assert.AreEqual(1, eventos.Count);
             Assert.AreEqual("textoDePrueba2", eventos[0]);
         }
-
 
 
     }

@@ -12,49 +12,58 @@
         <local:MainViewModel />
     </Window.DataContext>
 
-
     <StackPanel Orientation="Vertical">
+        
+        <Button Command="{Binding MostrarVentanaDeAyuda}" Width="20" Height="20" HorizontalAlignment="Right">
+            <Button.Content>
+                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE897;" FontSize="12" />
+            </Button.Content>
+        </Button>
 
-        <GroupBox Header="{x:Static recursos:MainWindowResources.EligeLaOpcion}" Margin="0,10,0,10">
-            <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+        <StackPanel Orientation="Vertical" Margin="10">
+
+            <GroupBox Header="{x:Static recursos:MainWindowResources.EligeLaOpcion}" Margin="10">
+                <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
                 
-                <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion1}" Margin="0,0,15,0">
-                    <RadioButton.Content>
-                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xED25;" FontSize="16" />
-                    </RadioButton.Content>
-                </RadioButton>
+                    <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion1}" Margin="0,0,15,0">
+                        <RadioButton.Content>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xED25;" FontSize="16" />
+                        </RadioButton.Content>
+                    </RadioButton>
                 
-                <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion2}" Margin="0,0,15,0">
-                    <RadioButton.Content>
-                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xED43;" FontSize="16" />
-                    </RadioButton.Content>
-                </RadioButton>
+                    <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion2}" Margin="0,0,15,0">
+                        <RadioButton.Content>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xED43;" FontSize="16" />
+                        </RadioButton.Content>
+                    </RadioButton>
                 
-                <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion3}" Margin="0,0,15,0">
-                    <RadioButton.Content>
-                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE8CE;" FontSize="16" />
-                    </RadioButton.Content>
-                </RadioButton>
+                    <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion3}" Margin="0,0,15,0">
+                        <RadioButton.Content>
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE8CE;" FontSize="16" />
+                        </RadioButton.Content>
+                    </RadioButton>
+            
+                </StackPanel>
+            </GroupBox>
+
+            <StackPanel Orientation="Vertical" Margin="10">
+            
+                <StackPanel Orientation="Horizontal" Margin="10,5,0,5">
+                    <TextBlock Text="{x:Static recursos:MainWindowResources.TeclearAquiLaPrueba1}" Margin="0,0,5,0" />
+                    <TextBox Text="{Binding textoDePrueba1}" Height="20" MinWidth="100"/>
+                </StackPanel>
+            
+                <StackPanel Orientation="Horizontal" Margin="10,5,0,5">
+                    <TextBlock Text="{x:Static recursos:MainWindowResources.TeclearAquiLaPrueba2}" Margin="0,0,5,0" />
+                    <TextBox Text="{Binding textoDePrueba2}" Height="20" MinWidth="100"/>
+                </StackPanel>
+
+                <Button Content="{x:Static recursos:MainWindowResources.ClicAquiParaProcesarLosTextosTecleados}" 
+                        Command="{Binding ProcesarLosTextosTecleados}" 
+                        HorizontalAlignment="Left" Margin="0,10,0,10" MinHeight="40" Padding="5" />
             
             </StackPanel>
-        </GroupBox>
 
-        <StackPanel Orientation="Vertical" Margin="0,10,0,10">
-            
-            <StackPanel Orientation="Horizontal" Margin="10,5,0,5">
-                <TextBlock Text="{x:Static recursos:MainWindowResources.TeclearAquiLaPrueba1}" Margin="0,0,5,0" />
-                <TextBox Text="{Binding textoDePrueba1}" Height="20" MinWidth="100"/>
-            </StackPanel>
-            
-            <StackPanel Orientation="Horizontal" Margin="10,5,0,5">
-                <TextBlock Text="{x:Static recursos:MainWindowResources.TeclearAquiLaPrueba2}" Margin="0,0,5,0" />
-                <TextBox Text="{Binding textoDePrueba2}" Height="20" MinWidth="100"/>
-            </StackPanel>
-
-            <Button Content="{x:Static recursos:MainWindowResources.ClicAquiParaProcesarLosTextosTecleados}" 
-                    Command="{Binding ProcesarLosTextosTecleados}" 
-                    HorizontalAlignment="Left" Margin="0,10,0,10" MinHeight="40" Padding="5" />
-            
         </StackPanel>
 
         <StatusBar Background="LightYellow" Margin="0,30,0,0" Height="20">
@@ -62,5 +71,5 @@
         </StatusBar>
         
     </StackPanel>
-    
+
 </Window>
