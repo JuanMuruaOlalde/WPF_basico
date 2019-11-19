@@ -16,8 +16,9 @@ namespace EjemploPlantillaWPF_TESTs
 
             modelo.textoDePrueba1 = "hola";
             modelo.textoDePrueba2 = "adios";
+            modelo.mensajeEnLaBarraDeEstado = string.Empty;
             modelo.ProcesarLosTextosTecleados.Execute(null);
-            Assert.AreEqual("Has tecleado 'hola' en la prueba 1 y 'adios' en la prueba 2.", modelo.mensajeEnLaBarraDeEstado);
+            Assert.AreNotEqual(string.Empty, modelo.mensajeEnLaBarraDeEstado);
         }
 
         [TestMethod]

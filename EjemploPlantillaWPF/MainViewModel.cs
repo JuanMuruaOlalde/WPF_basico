@@ -59,7 +59,10 @@ namespace EjemploPlantillaWPF
         }
         private void Accion_ProcesarLosTextosTecleados()
         {
-                mensajeEnLaBarraDeEstado = "Has tecleado '" + textoDePrueba1 + "' en la prueba 1 y '" + textoDePrueba2 + "' en la prueba 2.";
+                mensajeEnLaBarraDeEstado = Resources.mensajes.TextoTecleadoEnLaPrueba1 + " '" + textoDePrueba1 
+                                           + "' ::  " 
+                                           + Resources.mensajes.TextoTecleadoEnLaPrueba2 + " '" + textoDePrueba2
+                                           + ".";
         }
 
 

@@ -4,36 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EjemploPlantillaWPF"
+        xmlns:recursos="clr-namespace:EjemploPlantillaWPF.Resources"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" SizeToContent="WidthAndHeight">
     
     <Window.DataContext>
         <local:MainViewModel />
     </Window.DataContext>
 
+    
     <StackPanel Orientation="Vertical">
 
-        <GroupBox Header="Elige la opcion:" Margin="0,10,0,10">
+        <GroupBox Header="{x:Static recursos:MainWindowResources.EligeLaOpcion}" Margin="0,10,0,10">
             <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
-                <RadioButton Content="opcion1" IsChecked="{Binding estaSeleccionadaLaOpcion1}" Margin="0,0,15,0" />
-                <RadioButton Content="opcion2" IsChecked="{Binding estaSeleccionadaLaOpcion2}" Margin="0,0,15,0" />
-                <RadioButton Content="opcion3" IsChecked="{Binding estaSeleccionadaLaOpcion3}" Margin="0,0,15,0" />
+                <RadioButton Content="{x:Static recursos:MainWindowResources.opcion1}" IsChecked="{Binding estaSeleccionadaLaOpcion1}" Margin="0,0,15,0" />
+                <RadioButton Content="{x:Static recursos:MainWindowResources.opcion2}" IsChecked="{Binding estaSeleccionadaLaOpcion2}" Margin="0,0,15,0" />
+                <RadioButton Content="{x:Static recursos:MainWindowResources.opcion3}" IsChecked="{Binding estaSeleccionadaLaOpcion3}" Margin="0,0,15,0" />
             </StackPanel>
         </GroupBox>
 
         <StackPanel Orientation="Vertical" Margin="0,10,0,10">
             
             <StackPanel Orientation="Horizontal" Margin="10,5,0,5">
-                <TextBlock Text="Teclear aquí la prueba 1:" Margin="0,0,5,0" />
+                <TextBlock Text="{x:Static recursos:MainWindowResources.TeclearAquiLaPrueba1}" Margin="0,0,5,0" />
                 <TextBox Text="{Binding textoDePrueba1}" Height="20" MinWidth="100"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" Margin="10,5,0,5">
-                <TextBlock Text="Teclear aquí la prueba 2:" Margin="0,0,5,0" />
+                <TextBlock Text="{x:Static recursos:MainWindowResources.TeclearAquiLaPrueba2}" Margin="0,0,5,0" />
                 <TextBox Text="{Binding textoDePrueba2}" Height="20" MinWidth="100"/>
             </StackPanel>
 
-            <Button Content="Clic aqui para procesar los textos tecleados" 
+            <Button Content="{x:Static recursos:MainWindowResources.ClicAquiParaProcesarLosTextosTecleados}" 
                     Command="{Binding ProcesarLosTextosTecleados}" 
                     HorizontalAlignment="Left" Margin="0,10,0,10" MinHeight="40" Padding="5" />
             
