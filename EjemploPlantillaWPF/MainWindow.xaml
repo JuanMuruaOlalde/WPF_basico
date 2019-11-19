@@ -12,14 +12,30 @@
         <local:MainViewModel />
     </Window.DataContext>
 
-    
+
     <StackPanel Orientation="Vertical">
 
         <GroupBox Header="{x:Static recursos:MainWindowResources.EligeLaOpcion}" Margin="0,10,0,10">
             <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
-                <RadioButton Content="{x:Static recursos:MainWindowResources.opcion1}" IsChecked="{Binding estaSeleccionadaLaOpcion1}" Margin="0,0,15,0" />
-                <RadioButton Content="{x:Static recursos:MainWindowResources.opcion2}" IsChecked="{Binding estaSeleccionadaLaOpcion2}" Margin="0,0,15,0" />
-                <RadioButton Content="{x:Static recursos:MainWindowResources.opcion3}" IsChecked="{Binding estaSeleccionadaLaOpcion3}" Margin="0,0,15,0" />
+                
+                <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion1}" Margin="0,0,15,0">
+                    <RadioButton.Content>
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xED25;" FontSize="16" />
+                    </RadioButton.Content>
+                </RadioButton>
+                
+                <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion2}" Margin="0,0,15,0">
+                    <RadioButton.Content>
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xED43;" FontSize="16" />
+                    </RadioButton.Content>
+                </RadioButton>
+                
+                <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion3}" Margin="0,0,15,0">
+                    <RadioButton.Content>
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE8CE;" FontSize="16" />
+                    </RadioButton.Content>
+                </RadioButton>
+            
             </StackPanel>
         </GroupBox>
 
