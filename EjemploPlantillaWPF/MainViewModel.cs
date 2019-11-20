@@ -7,11 +7,29 @@ namespace EjemploPlantillaWPF
 
         public MainViewModel()
         {
+            tituloDeLaVentana = "EjemploPlantillaWPF"
+                                + "   ["
+                                + "v" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString()
+                                + "." + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString()
+                                + "  c" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build.ToString()
+                                + "y" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString()
+                                + "]";
+
             estaSeleccionadaLaOpcion1 = true;
             estaSeleccionadaLaOpcion2 = false;
             estaSeleccionadaLaOpcion3 = false;
         }
 
+        private string _tituloDeLaVentana;
+        public string tituloDeLaVentana
+        {
+            get { return _tituloDeLaVentana; }
+            set
+            {
+                _tituloDeLaVentana = value;
+                NotificarQueAlgoHaCambiadoEn("tituloDeLaVentana");
+            }
+        }
 
         private string _mensajeEnLaBarraDeEstado;
         public string mensajeEnLaBarraDeEstado

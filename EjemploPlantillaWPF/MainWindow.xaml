@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EjemploPlantillaWPF"
         xmlns:recursos="clr-namespace:EjemploPlantillaWPF.Resources"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="WidthAndHeight">
+        Title="{Binding tituloDeLaVentana}" SizeToContent="WidthAndHeight">
     
     <Window.DataContext>
         <local:MainViewModel />

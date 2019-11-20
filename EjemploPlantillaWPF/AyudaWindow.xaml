@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EjemploPlantillaWPF"
         xmlns:recursos="clr-namespace:EjemploPlantillaWPF.Resources"
         mc:Ignorable="d"
-        Title="Ayuda EjemploPlantillaWPF" MinWidth="800" MinHeight="600">
+        Title="{Binding tituloDeLaVentana}" MinWidth="800" MinHeight="600">
 
     <DockPanel LastChildFill="true">
         
