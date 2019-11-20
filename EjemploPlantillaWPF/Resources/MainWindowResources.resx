@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ClicAquiParaProcesarLosTextosTecleados" xml:space="preserve">
-    <value>Clic aqui para procesar los textos tecleados</value>
+    <value>clic aqui para procesar los textos tecleados</value>
   </data>
   <data name="EligeLaOpcion" xml:space="preserve">
     <value>Elige la opcion:</value>
@@ -137,5 +137,11 @@
   </data>
   <data name="TeclearAquiLaPrueba2" xml:space="preserve">
     <value>Teclear aquí la prueba 2:</value>
+  </data>
+  <data name="TipoDeMonstruo" xml:space="preserve">
+    <value>Tipo de Monstruo:</value>
+  </data>
+  <data name="ClicAquiParaProcesarElMonstruoSeleccionado" xml:space="preserve">
+    <value>clic aqui para procesar el monstruo seleccionado</value>
   </data>
 </root>

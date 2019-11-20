@@ -61,7 +61,16 @@ namespace EjemploPlantillaWPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clic aqui para procesar los textos tecleados.
+        ///   Looks up a localized string similar to clic aqui para procesar el monstruo seleccionado.
+        /// </summary>
+        public static string ClicAquiParaProcesarElMonstruoSeleccionado {
+            get {
+                return ResourceManager.GetString("ClicAquiParaProcesarElMonstruoSeleccionado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to clic aqui para procesar los textos tecleados.
         /// </summary>
         public static string ClicAquiParaProcesarLosTextosTecleados {
             get {
@@ -120,6 +129,15 @@ namespace EjemploPlantillaWPF.Resources {
         public static string TeclearAquiLaPrueba2 {
             get {
                 return ResourceManager.GetString("TeclearAquiLaPrueba2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipo de Monstruo:.
+        /// </summary>
+        public static string TipoDeMonstruo {
+            get {
+                return ResourceManager.GetString("TipoDeMonstruo", resourceCulture);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace EjemploPlantillaWPF
 {
@@ -18,6 +19,14 @@ namespace EjemploPlantillaWPF
             estaSeleccionadaLaOpcion1 = true;
             estaSeleccionadaLaOpcion2 = false;
             estaSeleccionadaLaOpcion3 = false;
+
+            _tiposDeMonstruoDisponibles = new List<string>();
+            string[] nombres = System.Enum.GetNames(typeof(TipoDeMonstruo));
+            foreach (string nombre in nombres)
+            {
+                _tiposDeMonstruoDisponibles.Add(nombre);
+            }
+            NotificarQueAlgoHaCambiadoEn("tiposDeMonstruoDisponibles");
         }
 
         private string _tituloDeLaVentana;
@@ -121,6 +130,76 @@ namespace EjemploPlantillaWPF
             AyudaWindow ventana = new AyudaWindow();
             ventana.DataContext = new AyudaViewModel(uriInicial: AyudaViewModel.URI_INICIAL_DE_LA_AYUDA);
             ventana.Show();
+        }
+
+
+        public enum TipoDeMonstruo
+        {
+            Enorme,
+            Grande,
+            Mediano,
+            Pequeño,
+            Diminuto
+        }
+
+        private TipoDeMonstruo _tipoDeMonstruoSeleccionado;
+        public TipoDeMonstruo tipoDeMonstruoSeleccionado
+        {
+            get { return _tipoDeMonstruoSeleccionado; }
+            set
+            {
+                _tipoDeMonstruoSeleccionado = value;
+                NotificarQueAlgoHaCambiadoEn("tipoDeMonstruoSeleccionado");
+            }
+        }
+
+        private List<string> _tiposDeMonstruoDisponibles = new List<string>();
+        private void RellenarListaDeTiposDeMonstruoDisponibles()
+        {
+            string[] nombres = System.Enum.GetNames(typeof(TipoDeMonstruo));
+            foreach (string nombre in nombres)
+            {
+                _tiposDeMonstruoDisponibles.Add(nombre);
+            }
+            NotificarQueAlgoHaCambiadoEn("tiposDeMonstruoDisponibles");
+        }
+        public List<string> tiposDeMonstruoDisponibles
+        {
+            get
+            {
+                if (_tiposDeMonstruoDisponibles.Count == 0)
+                {
+                    RellenarListaDeTiposDeMonstruoDisponibles();
+                }
+                return _tiposDeMonstruoDisponibles;
+            }
+        }
+
+        private System.Windows.Input.ICommand _ProcesarElMonstruoSeleccionado;
+        public System.Windows.Input.ICommand ProcesarElMonstruoSeleccionado
+        {
+            get { return _ProcesarElMonstruoSeleccionado ?? (_ProcesarElMonstruoSeleccionado = new comandoWPF(() => Accion_ProcesarElMonstruoSeleccionado())); }
+        }
+        private void Accion_ProcesarElMonstruoSeleccionado()
+        {
+            switch (tipoDeMonstruoSeleccionado)
+            {
+                case TipoDeMonstruo.Enorme:
+                    mensajeEnLaBarraDeEstado = "Soy un Monstruo grande y aterrador....";
+                    break;
+                case TipoDeMonstruo.Grande:
+                    mensajeEnLaBarraDeEstado = "Soy un Monstruo grande.";
+                    break;
+                case TipoDeMonstruo.Mediano:
+                    mensajeEnLaBarraDeEstado = "Soy un Monstruo.";
+                    break;
+                case TipoDeMonstruo.Pequeño:
+                    mensajeEnLaBarraDeEstado = "Soy un Monstruo optimizado para caber en cualquier sitio.";
+                    break;
+                case TipoDeMonstruo.Diminuto:
+                    mensajeEnLaBarraDeEstado = "Soy un Monstruo optimizado para pasar desapercibido.";
+                    break;
+            }
         }
 
 

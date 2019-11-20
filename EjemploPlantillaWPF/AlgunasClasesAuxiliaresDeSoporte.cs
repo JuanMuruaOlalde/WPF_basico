@@ -31,6 +31,39 @@ namespace EjemploPlantillaWPF
 
 
 
+    [System.Windows.Data.ValueConversion(typeof(MainViewModel.TipoDeMonstruo), typeof(string))]
+    public class ConversorDeTiposDeMonstruo : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value == null)
+            {
+                return value;
+            }
+            else
+            {
+                MainViewModel.TipoDeMonstruo tipo = (MainViewModel.TipoDeMonstruo)value;
+                return tipo.ToString();
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value == null)
+            {
+                return value;
+            }
+            else
+            {
+                string tipo = (string)value;
+                return Enum.Parse(typeof(MainViewModel.TipoDeMonstruo), tipo);
+            }
+        }
+    }
+
+
+
+
     public static class UtilidadParaPoderEnlazarConLaPropiedadSourceDelControlWebBrowser
     {
         //Este codigo esta copiado de https://stackoverflow.com/questions/263551/databind-the-source-property-of-the-webbrowser-in-wpf/2791680
