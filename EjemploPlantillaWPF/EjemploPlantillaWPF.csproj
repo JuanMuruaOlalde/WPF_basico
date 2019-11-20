@@ -79,6 +79,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mensajes.en.resx</DependentUpon>
     </Compile>
+    <Compile Include="v_Dibujante2D.cs" />
+    <Compile Include="v_Dibujante3D.cs" />
     <Page Include="AyudaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

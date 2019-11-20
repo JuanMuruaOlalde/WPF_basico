@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EjemploPlantillaWPF
 {
@@ -37,6 +25,16 @@ namespace EjemploPlantillaWPF
         }
 
 
+        private void AreaDeDibujo2D_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ((MainViewModel)DataContext).ProcesarClicRatonEnDibujante2D(puntoClicado: e.GetPosition((UIElement)sender),
+                                                                        extremo: new System.Windows.Point(x: areaDeDibujo2D.ActualWidth, y: areaDeDibujo2D.ActualHeight));
+        }
+
+        private void AreaDeDibujo3D_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Clic sobre el area de dibujo 3D, en coordenadas " + e.GetPosition((UIElement)sender));
+        }
     }
 
 }

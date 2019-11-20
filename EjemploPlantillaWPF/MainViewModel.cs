@@ -27,6 +27,10 @@ namespace EjemploPlantillaWPF
                 _tiposDeMonstruoDisponibles.Add(nombre);
             }
             NotificarQueAlgoHaCambiadoEn("tiposDeMonstruoDisponibles");
+
+            _dibujante2D = new v_Dibujante2D();
+            _dibujante3D = new v_Dibujante3D();
+
         }
 
         private string _tituloDeLaVentana;
@@ -202,6 +206,18 @@ namespace EjemploPlantillaWPF
             }
         }
 
+
+        private v_Dibujante2D _dibujante2D;
+        public v_Dibujante2D dibujante2D { get { return _dibujante2D; } }
+
+        private v_Dibujante3D _dibujante3D;
+        public v_Dibujante3D dibujante3D { get { return _dibujante3D; } }
+
+
+        public void ProcesarClicRatonEnDibujante2D(System.Windows.Point puntoClicado, System.Windows.Point extremo)
+        {
+            _dibujante2D.ProcesarClicRaton(puntoClicado, extremo);
+        }
 
 
 
