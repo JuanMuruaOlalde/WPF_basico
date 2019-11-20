@@ -24,5 +24,19 @@ namespace EjemploPlantillaWPF
         {
             InitializeComponent();
         }
+
+        private void ElCursorEstaSobreLosRadiobuttons(object sender, MouseEventArgs e)
+        {
+            ((MainViewModel)DataContext).mensajeEnLaBarraDeEstado = "El ratón está sobre los radiobuttons"
+                                                                    + ", en la posicion " + e.GetPosition(relativeTo: this).ToString();
+        }
+
+        private void ElCursorYaNoEstaSobreLosRadiobuttons(object sender, MouseEventArgs e)
+        {
+            ((MainViewModel)DataContext).mensajeEnLaBarraDeEstado = "";
+        }
+
+
     }
+
 }

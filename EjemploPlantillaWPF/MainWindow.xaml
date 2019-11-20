@@ -22,7 +22,8 @@
 
         <StackPanel Orientation="Vertical" Margin="10">
 
-            <GroupBox Header="{x:Static recursos:MainWindowResources.EligeLaOpcion}" Margin="10">
+            <GroupBox Header="{x:Static recursos:MainWindowResources.EligeLaOpcion}" Margin="10" 
+                      MouseEnter="ElCursorEstaSobreLosRadiobuttons" MouseLeave="ElCursorYaNoEstaSobreLosRadiobuttons">
                 <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
                 
                     <RadioButton IsChecked="{Binding estaSeleccionadaLaOpcion1}" Margin="0,0,15,0">
